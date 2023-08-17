@@ -1,0 +1,36 @@
+﻿@model User
+
+<form method="post">
+    <div class="mb-3 row">
+        <div class="col-sm-10">
+            <input type="text" asp-for="TaskName" class="form-control">
+            <label asp-for="TaskName">Task</label>
+        </div>
+        <div class="col-sm-10">
+            <input type="date" asp-for="ExpiryDate" class="form-control">
+            <label asp-for="ExpiryDate" class="col-form-label">Expiry Date</label>
+        </div>
+        <div class="col-sm-10">
+            <select asp-for="Users" class="form-select" aria-label="Default">
+                <option selected>Select</option>
+                <option value="User One">User One</option>
+                <option value="User Two">User Two</option>
+                <option value="User Three">User Three</option>
+            </select>
+            <label asp-for="Users" class="col-form-label">Users</label>
+        </div>
+        <div class="col-sm-10">
+            <select asp-for="IsImportant" class="form-select" aria-label="Default">
+                <option selected>Select</option>
+                <option value="True">Yes</option>
+                <option value="False">No</option>
+            </select>
+            <label asp-for="IsImportant" class="col-form-label">Important</label>
+        </div>
+        <div class="col-sm-10">
+            <div class="col-6">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Task Management System</h1>
+    
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Create" class="btn btn-primary">
+        Assign Tasks
+    </a>
+</div>
+
+<table style="border-collapse: collapse;width: 100%; color: palevioletred">
+    <thead>
+        <tr>
+            <th>Tasks Name</th>
+            <th>Expiry Date</th>
+            <th>Users</th>
+            <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.TaskName
+                </td>
+                <td>
+                    @obj.ExpiryDate.ToString("dd MMM yyyy")
+                </td>
+                <td>
+                    @obj.Users
+                </td>
+                <td>
+                    @obj.IsImportant
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
